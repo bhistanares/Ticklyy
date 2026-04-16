@@ -12,6 +12,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Ticklyy">
         <activity android:name=".DetailNoteActivity" />
+        <activity android:name=".AddNoteActivity" />
+        <activity android:name=".EditNoteActivity" />
         <activity
             android:name=".MainActivity"
             android:exported="true">

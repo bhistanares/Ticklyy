@@ -45,6 +45,7 @@ class MainActivity : AppCompatActivity() {
             intent.putExtra("NOTE_INDEX", position)
             intent.putExtra("NOTE_TITLE", selectedNote.title)
             intent.putExtra("NOTE_CONTENT", selectedNote.content)
+            intent.putExtra("NOTE_CATEGORY", selectedNote.category)
             startActivity(intent)
         }
 
@@ -54,7 +55,8 @@ class MainActivity : AppCompatActivity() {
         }
 
         btnAddNote.setOnClickListener {
-            showAddNoteDialog()
+            val intent = android.content.Intent(this, AddNoteActivity::class.java)
+            startActivity(intent)
         }
 
         btnSearch.setOnClickListener {
@@ -84,46 +86,6 @@ class MainActivity : AppCompatActivity() {
         listNotes.adapter = adapter
     }
 
-    private fun showAddNoteDialog() {
-        val inputTitle = EditText(this)
-        inputTitle.hint = "Masukkan judul note"
-
-        AlertDialog.Builder(this)
-            .setTitle("Tambah Note")
-            .setView(inputTitle)
-            .setPositiveButton("Lanjut") { _, _ ->
-                val newTitle = inputTitle.text.toString().trim()
-
-                if (newTitle.isNotEmpty()) {
-                    showAddContentDialog(newTitle)
-                } else {
-                    Toast.makeText(this, "Judul note tidak boleh kosong", Toast.LENGTH_SHORT).show()
-                }
-            }
-            .setNegativeButton("Batal", null)
-            .show()
-    }
-
-    private fun showAddContentDialog(title: String) {
-        val inputContent = EditText(this)
-        inputContent.hint = "Masukkan isi note"
-        inputContent.minLines = 4
-
-        AlertDialog.Builder(this)
-            .setTitle("Isi Note")
-            .setView(inputContent)
-            .setPositiveButton("Simpan") { _, _ ->
-                val newContent = inputContent.text.toString().trim()
-
-                noteList.add(Note(title, newContent))
-                updateListView()
-
-                Toast.makeText(this, "Note berhasil ditambahkan", Toast.LENGTH_SHORT).show()
-            }
-            .setNegativeButton("Batal", null)
-            .show()
-    }
-
     private fun showDeleteDialog(position: Int) {
         AlertDialog.Builder(this)
             .setTitle("Hapus Note")
@@ -139,9 +101,9 @@ class MainActivity : AppCompatActivity() {
 
     companion object {
         val sharedNotes = arrayListOf(
-            Note("Belajar Android", "Belajar layout, activity, dan intent."),
-            Note("Tugas Matematika", "Kerjakan halaman 25 nomor 1 sampai 10."),
-            Note("Belanja Bulanan", "Beli sabun, beras, telur, dan susu.")
+            Note("Belajar Android", "Belajar layout, activity, dan intent.", "Tugas Sekolah"),
+            Note("Tugas Matematika", "Kerjakan halaman 25 nomor 1 sampai 10.", "Tugas Sekolah"),
+            Note("Belanja Bulanan", "Beli sabun, beras, telur, dan susu.", "Pribadi")
         )
     }
 }

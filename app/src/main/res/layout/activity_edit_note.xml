@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F6F2EC"
+    android:padding="24dp">
+
+    <TextView
+        android:id="@+id/textEditTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Edit Note"
+        android:textColor="#6B5B4D"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/inputEditNoteTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:backgroundTint="#C9A97A"
+        android:hint="Masukkan judul note"
+        android:inputType="textCapCharacters"
+        android:textColor="#6B5B4D"
+        android:textColorHint="#A9998A"
+        app:layout_constraintTop_toBottomOf="@id/textEditTitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <EditText
+        android:id="@+id/inputEditNoteContent"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="#C9A97A"
+        android:gravity="top|start"
+        android:hint="Tulis isi note di sini..."
+        android:inputType="textMultiLine"
+        android:minLines="8"
+        android:paddingTop="12dp"
+        android:textColor="#6B5B4D"
+        android:textColorHint="#A9998A"
+        app:layout_constraintTop_toBottomOf="@id/inputEditNoteTitle"
+        app:layout_constraintBottom_toTopOf="@id/textEditCategory"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/textEditCategory"
+        android:clickable="true"
+        android:focusable="true"
+        android:padding="8dp"
+        android:background="?attr/selectableItemBackground"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="12dp"
+        android:text="Kategori: "
+        android:textColor="#8A7868"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@id/btnSaveEditNote"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btnSaveEditNote"
+        android:layout_width="0dp"
+        android:layout_height="56dp"
+        android:backgroundTint="#E8D2B3"
+        android:text="Simpan Perubahan"
+        android:textColor="#6B5B4D"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
