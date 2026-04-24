@@ -1,26 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="78dp"
-    android:background="#E9D7E8"
+    android:layout_height="82dp"
+    android:background="@drawable/bg_note_card"
+    android:elevation="4dp"
     android:gravity="center_vertical"
     android:orientation="horizontal"
-    android:paddingStart="16dp"
-    android:paddingEnd="16dp">
+    android:paddingStart="14dp"
+    android:paddingEnd="18dp">
 
     <TextView
         android:id="@+id/textNoteIcon"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="○"
-        android:textColor="#A86A8A"
-        android:textSize="22sp"
-        android:textStyle="bold" />
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@drawable/bg_note_icon"
+        android:gravity="center"
+        android:text="📖"
+        android:textColor="#5B4630"
+        android:textSize="28sp" />
 
     <LinearLayout
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="12dp"
+        android:layout_marginStart="14dp"
         android:layout_weight="1"
         android:orientation="vertical">
 
@@ -29,18 +31,17 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Belajar Android"
-            android:textColor="#7E4B66"
-            android:textSize="18sp"
+            android:textColor="#2F2418"
+            android:textSize="21sp"
             android:textStyle="bold" />
 
         <TextView
             android:id="@+id/textNoteSub"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="2dp"
             android:text="Kategori"
-            android:textColor="#A57F93"
-            android:textSize="13sp" />
+            android:textColor="#5B4A39"
+            android:textSize="15sp" />
     </LinearLayout>
 
     <TextView
@@ -48,8 +49,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="09.00"
-        android:textColor="#C39CB2"
-        android:textSize="12sp"
+        android:textColor="#77791E"
+        android:textSize="18sp"
         android:textStyle="bold" />
 
 </LinearLayout>
